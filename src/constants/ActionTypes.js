@@ -1,0 +1,6 @@
+
+export const SET_GITHUB_KEY = 'SET_GITHUB_KEY';
+export const SET_GITHUB_KEY_SUCCESS = 'SET_GITHUB_KET_SUCCESS';
+
+export const GET_USER = 'GET_USER';
+export const GET_USER_SUCCESS = 'GET_USER_SUCCESS';
