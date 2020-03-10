@@ -9,7 +9,7 @@ import {
 
 function* getUserDataSaga (action) {
 
-    const { data } = yield call(fetchUser, action.payload.key, action.payload.query);
+    const { data } = yield call(fetchUser, action.payload, action.payload.query);
 
     yield put(getUserSuccess(data));
 }

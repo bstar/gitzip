@@ -1,16 +1,17 @@
 const axios = require('axios');
 
-const baseUri = `/api`;
+const baseUri = `/api/users`;
 
 
 export const fetchUser = (payload, uriRoot = baseUri) => {
 
-    return axios.get(uriRoot)
-        .then(function (response) {
-          // handle success
-          return(response);
+    const [ username, password ] = payload.split(':');
+
+    return axios.get(`${uriRoot}/${username}`, { auth: { username, password }})
+        .then(response => {
+            return (response);
         })
-        .catch(function (error) {
-            return(error);
+        .catch(error => {
+            return (error);
         })
 };

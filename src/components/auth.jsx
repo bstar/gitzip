@@ -19,7 +19,7 @@ const Auth = ( { setKey } ) => {
     return (
         <input onKeyPress={submitHandler}
                className="auth-input"
-               placeholder="Paste Key and Enter"
+               placeholder="Format: username:key"
                type="text"
                name="key" />
     );
