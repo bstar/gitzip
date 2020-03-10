@@ -7,3 +7,5 @@ export const setGithubKeySuccess = (json, meta) => (universalActionCreator(types
 
 export const getUser = (key, meta) => (universalActionCreator(types.GET_USER, key, meta));
 export const getUserSuccess = (json, meta) => (universalActionCreator(types.GET_USER_SUCCESS, json, meta));
+
+export const getUserReposSuccess = (json, meta) => (universalActionCreator(types.GET_USER_REPOS_SUCCESS, json, meta));
