@@ -28,4 +28,4 @@ const Auth = ( { setKey } ) => {
 export default connect(
     null,
     mapDispatchToProps
-)(Auth)
+)(Auth);

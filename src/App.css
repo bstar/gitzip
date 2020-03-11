@@ -1,3 +1,5 @@
+*:focus {outline:none}
+
 .App {
   text-align: center;
 }
@@ -18,14 +20,18 @@ input[type=text] {
   }
 }
 
-.App-header {
+.main-container {
   background-color:rgb(42, 53, 88);
   min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-header {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -45,4 +51,39 @@ input[type=text] {
   font-size: 16px;
   color: #eee;
   background-color: rgb(42, 53, 88);
+  width: 450px;
+  text-align: center;
+}
+
+.repos-container {
+  padding: 50px;
+}
+
+.repos-header {
+  text-shadow: 1px 1px 2px black;
+  padding: 20px 0px 20px 10px;
+  color: #eee;
+}
+
+.repo-card-container {
+  display: block;
+  text-align: left;
+  color: #eee;
+  font-size: 14px;
+  background-color: rgba(38, 47, 72, 0.747);
+  border: 1px solid rgb(252, 255, 69);
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.75);
+}
+
+.repo-card-container div {
+  padding: 2px;
+}
+
+.repo-card-container:hover {
+  background-color: rgb(49, 61, 92);
+  cursor: pointer;
 }

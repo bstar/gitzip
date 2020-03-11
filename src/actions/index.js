@@ -9,3 +9,5 @@ export const getUser = (key, meta) => (universalActionCreator(types.GET_USER, ke
 export const getUserSuccess = (json, meta) => (universalActionCreator(types.GET_USER_SUCCESS, json, meta));
 
 export const getUserReposSuccess = (json, meta) => (universalActionCreator(types.GET_USER_REPOS_SUCCESS, json, meta));
+
+export const setActiveRepo = (id, meta) => (universalActionCreator(types.SET_ACTIVE_REPO, id, meta));
