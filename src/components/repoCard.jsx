@@ -12,7 +12,8 @@ const mapDispatchToProps = dispatch => ({
 const RepoCard = ({ repo, setRepo }) => {
 
     const repoHandler = e => {
-        setRepo(repo.id);
+        window.scrollTo(0,0);
+        setRepo({ name: repo.name });
     };
 
     return (

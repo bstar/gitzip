@@ -26,6 +26,10 @@ input[type=text] {
   font-size: calc(10px + 2vmin);
 }
 
+.content-container {
+  display: flex;
+}
+
 .App-header {
   display: flex;
   min-height: 100vh;

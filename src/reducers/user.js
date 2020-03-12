@@ -2,6 +2,8 @@ import {
     SET_GITHUB_KEY,
     GET_USER_SUCCESS,
     GET_USER_REPOS_SUCCESS,
+    SET_ACTIVE_REPO,
+    GET_USER_REPO_ISSUES_SUCCESS,
   } from '../constants/ActionTypes';
   
   const initialSettings = {};
@@ -31,13 +33,31 @@ import {
           name: userData.name,
         }
 
-        case GET_USER_REPOS_SUCCESS:
+      case GET_USER_REPOS_SUCCESS:
 
-          const repos = action.payload;
+        const repos = action.payload;
+
+        return {
+          ...state,
+          repos,
+        }
+
+      case SET_ACTIVE_REPO:
+
+        const activeRepoData = action.payload;
+
+        return {
+          ...state,
+          activeRepoData,
+        }
+
+        case GET_USER_REPO_ISSUES_SUCCESS:
+
+          const issues = action.payload;
 
           return {
             ...state,
-            repos,
+            issues,
           }
 
       default:

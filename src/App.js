@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import logo from './Octocat.png';
 import Auth from './components/auth';
 import Repos from './components/repos';
+import Issues from './components/issues';
 import './App.css';
 
 const mapStateToProps = state => {
@@ -14,12 +15,18 @@ const mapStateToProps = state => {
 
 const App = ({ user }) => {
 
-  const { login, repos } = user;
+  const { login, repos, issues } = user;
 
   return (
     <div className="main-container">
       { login ?
-        <Repos repos={repos} />
+        <div className="content-container">
+          <Repos repos={repos} />
+
+          { issues &&
+              <Issues issues={issues} />
+          }
+        </div>
       :
         <div className="App-header">
           <Auth />
