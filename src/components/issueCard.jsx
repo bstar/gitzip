@@ -16,7 +16,7 @@ const IssueCard = ({ issue, setRank }) => {
         <button className="repo-card-container">
             <div><b>Title: {issue.title}</b></div>
             <div><b>State:</b> {issue.state}</div>
-            <div><b>Created at:</b> {Issues.created_at}</div>
+            <div><b>Created at:</b> {issue.created_at}</div>
         </button>
     );
 };
