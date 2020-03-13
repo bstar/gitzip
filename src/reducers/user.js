@@ -49,6 +49,7 @@ import {
         return {
           ...state,
           activeRepoData,
+          issues: null,
         }
 
         case GET_USER_REPO_ISSUES_SUCCESS:
