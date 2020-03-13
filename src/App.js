@@ -24,13 +24,21 @@ class App extends Component {
 
     return (
       <div className="main-container">
+        { user.login &&
+          <div className="header">
+            <img src={user.avatar_url} />
+            <div>{user.name} ({user.login})</div>
+          </div>
+        }
         { login ?
           <div className="content-container">
+
             <Repos repos={repos} />
   
             { issues &&
                 <Issues issues={issues} user={user} />
             }
+
           </div>
         :
           <div className="App-header">

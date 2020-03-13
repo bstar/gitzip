@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import get from 'lodash.get';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 import IssueCard from './issueCard';
@@ -71,7 +70,11 @@ class Issues extends Component {
             <div className="repos-container">
                 <div className="repos-header">Order issues for: {activeRepoName}</div>
 
-                <SortableList lockAxis="y" issues={issues} onSortEnd={this.onSortEnd} />
+                { issues && issues.length > 0 ?
+                    <SortableList lockAxis="y" issues={issues} onSortEnd={this.onSortEnd} />
+               :
+                    <div className="warning">This repo has no issues.</div>
+                }
             </div>
         )
     };

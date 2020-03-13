@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
 const IssueCard = ({ issue, setRank }) => {
 
     return (
-        <button className="repo-card-container">
+        <button className="issue-card-container">
             <div><b>Title: {issue.title}</b></div>
             <div><b>State:</b> {issue.state}</div>
             <div><b>Created at:</b> {issue.created_at}</div>
