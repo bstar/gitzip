@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setGithubKey } from '../actions';
   
@@ -37,6 +38,10 @@ const Auth = ( { setKey } ) => {
                type="text"
                name="key" />
     );
+};
+
+Auth.propTypes = {
+    setKey: PropTypes.func.isRequired,
 };
 
 export default connect(

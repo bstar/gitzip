@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
@@ -27,6 +28,16 @@ const SortableList = SortableContainer(({ issues }) => {
 });
 
 class Issues extends Component {
+
+    static propTypes = {
+        activeRepoName: PropTypes.string,
+        userLogin: PropTypes.string,
+        issues: PropTypes.array,
+    };
+
+    static defaultProps = {
+        issues: [],
+    }
 
     state = { issues: [] };
 
@@ -70,7 +81,7 @@ class Issues extends Component {
             <div className="issues-container">
                 <div className="content-header">Order issues for: {activeRepoName}</div>
 
-                { issues && issues.length > 0 ?
+                { issues.length > 0 ?
                     <SortableList lockAxis="y" issues={issues} onSortEnd={this.onSortEnd} />
                :
                     <div className="warning">This repo has no issues.</div>

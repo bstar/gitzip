@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setActiveRepo } from '../actions';
   
@@ -23,6 +24,11 @@ const RepoCard = ({ repo, setRepo }) => {
             <div><b>Issues:</b> {repo.open_issues}</div>
         </button>
     );
+};
+
+RepoCard.propTypes = {
+    repo: PropTypes.object.isRequired,
+    setRepo: PropTypes.func.isRequired,
 };
 
 export default connect(

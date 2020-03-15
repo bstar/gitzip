@@ -26,7 +26,7 @@ class App extends Component {
       <div className="main-container">
         { user.login &&
           <div className="header">
-            <img src={user.avatar_url} />
+            <img alt="avatar" src={user.avatar_url} />
             <div className="user-text">{user.name} ({user.login})</div>
           </div>
         }

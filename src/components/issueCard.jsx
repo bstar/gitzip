@@ -1,27 +1,22 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { setIssueRank } from '../actions';
-import Issues from './issues';
+import PropTypes from 'prop-types';
+import moment from 'moment';
   
 
-const mapDispatchToProps = dispatch => ({
-    setRank: id => {
-        dispatch(setIssueRank(id));
-    }
-});
-
-const IssueCard = ({ issue, setRank }) => {
+const IssueCard = ({ issue }) => {
 
     return (
         <button className="issue-card-container">
             <div><b>Title: {issue.title}</b></div>
             <div><b>State:</b> {issue.state}</div>
-            <div><b>Created at:</b> {issue.created_at}</div>
+            <div><b>Created at:</b> {moment(issue.created_at).format('MM/DD/YYYY')}</div>
+            <div><b>Updated at:</b> {moment(issue.updated_at).fromNow()}</div>
         </button>
     );
 };
 
-export default connect(
-    null,
-    mapDispatchToProps
-)(IssueCard);
+IssueCard.propTypes = {
+    issue: PropTypes.object.isRequired,
+};
+
+export default IssueCard;
