@@ -38,7 +38,6 @@ class App extends Component {
             { issues &&
                 <Issues issues={issues} user={user} />
             }
-
           </div>
         :
           <div className="App">

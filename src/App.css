@@ -150,3 +150,8 @@ input[type=text] {
   padding: 10px;
   font-size: 18px;
 }
+
+.assigneeAvatar {
+  width: 40px;
+  padding: 5px 10px 0px 0px;
+}
