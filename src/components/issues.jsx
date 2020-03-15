@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import get from 'lodash.get';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 import IssueCard from './issueCard';
@@ -10,7 +11,7 @@ const mapStateToProps = state => {
 
     return ({
         userLogin: state.user.login,
-        activeRepoName: state.user.activeRepoData.name,
+        activeRepoName: get(state, 'user.activeRepoData.name'),
     });
 };
   

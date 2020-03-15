@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="issues-container"
+>
+  <div
+    className="content-header"
+  >
+    Order issues for: 
+  </div>
+  <div
+    className="warning"
+  >
+    This repo has no issues.
+  </div>
+</div>
+`;

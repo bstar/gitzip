@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  className="issue-card-container"
+>
+  <div>
+    <b>
+      Title:
+    </b>
+     
+  </div>
+  <div>
+    <b>
+      Created at:
+    </b>
+     
+    03/15/2020
+  </div>
+  <div>
+    <b>
+      Updated at:
+    </b>
+     
+    a few seconds ago
+  </div>
+</button>
+`;

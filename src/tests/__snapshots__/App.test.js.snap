@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="main-container"
+>
+  <div
+    className="App"
+  >
+    <input
+      className="auth-input"
+      name="key"
+      onKeyPress={[Function]}
+      placeholder="Format: username:key"
+      type="text"
+    />
+    <img
+      alt="logo"
+      className="App-logo"
+      src="Octocat.png"
+    />
+  </div>
+</div>
+`;
