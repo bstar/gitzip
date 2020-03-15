@@ -67,8 +67,8 @@ class Issues extends Component {
         const { issues } = this.state;
 
         return (
-            <div className="repos-container">
-                <div className="repos-header">Order issues for: {activeRepoName}</div>
+            <div className="issues-container">
+                <div className="content-header">Order issues for: {activeRepoName}</div>
 
                 { issues && issues.length > 0 ?
                     <SortableList lockAxis="y" issues={issues} onSortEnd={this.onSortEnd} />

@@ -28,27 +28,44 @@ input[type=text] {
 
 .content-container {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .repos-container .list {
+    max-height: 400px;
+    overflow: scroll;
+    border-top: 1px solid rgb(145, 167, 226);
+    border-bottom: 1px solid rgb(145, 167, 226);
+    border-left: 1px solid rgb(61, 69, 94);
+    border-right: 1px solid rgb(61, 69, 94);
+    box-shadow: 0px 0px 10px rgba(24, 20, 20, .3), 0px -10px 5px rgba(24, 20, 20, .2);
+  }
 }
 
 .header {
   color: #eee;
   font-size: 14px;
-  padding: 20px 20px 0px 20px;
-  float: right;
+  display: flex;
+  padding: 10px;
 }
 
 .header img {
   width: 40px;
   border-radius: 50%;
-  float: left;
-  padding-right: 10px;
 }
 
 .header div {
-  margin-left: 40px;
+  padding: 10px 0px 0px 10px;
 }
 
-.App-header {
+.user-text {
+}
+
+.App {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -77,13 +94,10 @@ input[type=text] {
   text-align: center;
 }
 
-.repos-container {
-  padding: 50px;
-}
-
-.repos-header {
+.content-header {
   text-shadow: 1px 1px 2px black;
   padding: 20px 0px 20px 10px;
+  margin-top: 15px;
   color: #eee;
 }
 

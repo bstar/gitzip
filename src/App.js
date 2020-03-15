@@ -27,7 +27,7 @@ class App extends Component {
         { user.login &&
           <div className="header">
             <img src={user.avatar_url} />
-            <div>{user.name} ({user.login})</div>
+            <div className="user-text">{user.name} ({user.login})</div>
           </div>
         }
         { login ?
@@ -41,7 +41,7 @@ class App extends Component {
 
           </div>
         :
-          <div className="App-header">
+          <div className="App">
             <Auth />
             <img src={logo} className="App-logo" alt="logo" />
           </div>
