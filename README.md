@@ -1,5 +1,7 @@
 ## Gitzip (Issue Prioritization For Github Users)
 
+### `npm install`
+
 ### `npm run server`
 
 Runs the app's internal proxy server.  Required to access Github API.
@@ -7,7 +9,7 @@ Runs the app's internal proxy server.  Required to access Github API.
 ### `npm start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 
 ### `npm test` (incomplete)
 
