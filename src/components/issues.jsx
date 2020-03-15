@@ -27,6 +27,21 @@ const SortableList = SortableContainer(({ issues }) => {
     );
 });
 
+const getNewIssues = (orderIdArray, issues) => (
+    issues.reduce((acc, issue) => {
+
+        const issueId = issue.id.toString();
+        const isStored = orderIdArray.includes(issueId);
+
+        if (isStored) {
+            return acc;
+        }
+
+        issue.unordered = true;
+        return acc.concat(issue);
+    }, [])
+);
+
 class Issues extends Component {
 
     static propTypes = {
@@ -50,8 +65,11 @@ class Issues extends Component {
         if (orderIdsFromLocalStorage) {
             const orderIdArray = orderIdsFromLocalStorage.split(',');
             const orderedIssues = orderIdArray.map(id => issues.find(issue => issue.id === +id));
+            // identifies issues that have been added after list has been ordered
+            const missing = getNewIssues(orderIdArray, issues) || [];
+            const combinedIssues = orderedIssues.concat(missing);
 
-            this.setState({ issues: orderedIssues });
+            this.setState({ issues: combinedIssues });
         } else {
             this.setState({ issues });
         }
