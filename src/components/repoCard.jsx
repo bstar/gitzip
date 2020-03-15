@@ -25,7 +25,7 @@ const RepoCard = ({ repo, setRepo, activeRepoName }) => {
         setRepo({ name: repo.name });
     };
 
-    const containerBorderStyle = activeRepoName === repo.name ? { border: '1px solid cyan' } : {};
+    const containerBorderStyle = activeRepoName === repo.name ? { border: '1px solid rgb(252, 255, 69)' } : {};
 
     return (
         <button className="repo-card-container" style={containerBorderStyle} onClick={() => repoHandler(repo.id)}>

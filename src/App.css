@@ -97,7 +97,8 @@ input[type=text] {
   text-shadow: 1px 1px 2px black;
   padding: 20px 0px 20px 10px;
   margin-top: 15px;
-  color: #eee;
+  color: rgb(252, 255, 69);
+  font-size: 18px;
 }
 
 .repo-card-container {
