@@ -13,8 +13,7 @@ const IssueCard = ({ issue }) => {
     if (issue) {
         return (
             <button className="issue-card-container" style={issue.unordered && unorderedStyle}>
-                <div><b>Title: {issue.title}</b></div>
-                <div><b>State:</b> {issue.state}</div>
+                <div><b>Title:</b> {issue.title}</div>
                 <div><b>Created at:</b> {moment(issue.created_at).format('MM/DD/YYYY')}</div>
                 <div><b>Updated at:</b> {moment(issue.updated_at).fromNow()}</div>
                 { issue.assignee &&
