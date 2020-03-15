@@ -9,11 +9,25 @@ const mapDispatchToProps = dispatch => ({
     }
 });
 
+const validate = text => {
+
+    return text && text.match(/(.*):(.*)/);
+};
+
 const Auth = ( { setKey } ) => {
 
     const submitHandler = e => {
 
-        if (e.key === 'Enter') setKey(e.target.value); 
+        const value = e.target.value;
+        const isValid = validate(value);
+
+        if (e.key === 'Enter' && isValid) {
+
+            setKey(value);
+        } else {
+            console.log("Not a valid user/key string")
+            // TODO dispatch action to display validation error
+        }
     };
 
     return (
