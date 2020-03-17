@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import get from 'lodash.get';
-  
+
 
 const IssueCard = ({ issue }) => {
 
@@ -25,7 +25,7 @@ const IssueCard = ({ issue }) => {
         );
     }
 
-    return <span></span>;
+    return <span />;
 };
 
 IssueCard.propTypes = {
@@ -34,6 +34,6 @@ IssueCard.propTypes = {
 
 IssueCard.defaultProps = {
     issue: {},
-}
+};
 
 export default IssueCard;

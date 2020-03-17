@@ -7,4 +7,4 @@ export default function* root () {
     yield all([
         fork(User),
     ]);
-};
+}

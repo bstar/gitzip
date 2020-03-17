@@ -5,41 +5,35 @@ import get from 'lodash.get';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 import IssueCard from './issueCard';
-  
 
-const mapStateToProps = state => {
 
-    return ({
-        userLogin: state.user.login,
-        activeRepoName: get(state, 'user.activeRepoData.name'),
-    });
-};
-  
+const mapStateToProps = state => ({
+    userLogin: state.user.login,
+    activeRepoName: get(state, 'user.activeRepoData.name'),
+});
+
 const SortableItem = SortableElement(({ issue }) => <IssueCard issue={issue} />);
 
-const SortableList = SortableContainer(({ issues }) => {
-
-    return (
-        <div>
-            { issues.map((issue, index) => (
-                <SortableItem key={`issue-${index}`} index={index} issue={issue} />
-            ))}
-        </div>
-    );
-});
+const SortableList = SortableContainer(({ issues }) => (
+    <div>
+        { issues.map((issue, index) => (
+            <SortableItem key={`issue-${issue.id}`} index={index} issue={issue} />
+        ))}
+    </div>
+));
 
 const getNewIssues = (orderIdArray, issues) => (
     issues.reduce((acc, issue) => {
 
         const issueId = issue.id.toString();
         const isStored = orderIdArray.includes(issueId);
+        const unordered = true;
 
         if (isStored) {
             return acc;
         }
 
-        issue.unordered = true;
-        return acc.concat(issue);
+        return acc.concat({ ...issue, unordered });
     }, [])
 );
 
@@ -84,7 +78,7 @@ class Issues extends Component {
 
             const movedIssues = arrayMove(issues, oldIndex, newIndex);
             const issuesArray = movedIssues.map(issue => issue.id);
-            
+
             localStorage.setItem(`${userLogin}+${activeRepoName}`, issuesArray);
 
             return { issues: movedIssues };
@@ -106,8 +100,8 @@ class Issues extends Component {
                     <div className="warning">This repo has no issues.</div>
                 }
             </div>
-        )
-    };
+        );
+    }
 }
 
 export default connect(

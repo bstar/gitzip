@@ -3,25 +3,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import get from 'lodash.get';
 import { setActiveRepo } from '../actions';
-  
 
-const mapStateToProps = state => {
 
-    return ({
-        activeRepoName: get(state, 'user.activeRepoData.name'),
-    });
-};
+const mapStateToProps = state => ({
+    activeRepoName: get(state, 'user.activeRepoData.name'),
+});
 
 const mapDispatchToProps = dispatch => ({
     setRepo: id => {
         dispatch(setActiveRepo(id));
-    }
+    },
 });
 
 const RepoCard = ({ repo, setRepo, activeRepoName }) => {
 
-    const repoHandler = e => {
-        window.scrollTo(0,0);
+    const repoHandler = () => {
+        window.scrollTo(0, 0);
         setRepo({ name: repo.name });
     };
 
@@ -47,5 +44,5 @@ RepoCard.defaultProps = {
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
 )(RepoCard);

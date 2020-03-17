@@ -4,67 +4,56 @@ import {
     GET_USER_REPOS_SUCCESS,
     SET_ACTIVE_REPO,
     GET_USER_REPO_ISSUES_SUCCESS,
-  } from '../constants/ActionTypes';
-  
-  const initialSettings = {};
-  
-  const user = (state = initialSettings, action) => {
-    
+} from '../constants/ActionTypes';
+
+const initialSettings = {};
+
+const user = (state = initialSettings, action) => {
+
     switch (action.type) {
-  
-      case SET_GITHUB_KEY:
-    
-        const key = action.payload;
 
-        return {
-          ...state,
-          key,
-        }
+        case SET_GITHUB_KEY:
 
-      case GET_USER_SUCCESS:
-  
-        const userData = action.payload;
+            return {
+                ...state,
+                key: action.payload,
+            };
 
-        return {
-          ...state,
-          login: userData.login,
-          avatar_url: userData.avatar_url,
-          url: userData.url,
-          name: userData.name,
-        }
+        case GET_USER_SUCCESS:
 
-      case GET_USER_REPOS_SUCCESS:
+            return {
+                ...state,
+                login: action.payload.login,
+                avatar_url: action.payload.avatar_url,
+                url: action.payload.url,
+                name: action.payload.name,
+            };
 
-        const repos = action.payload;
+        case GET_USER_REPOS_SUCCESS:
 
-        return {
-          ...state,
-          repos,
-        }
+            return {
+                ...state,
+                repos: action.payload,
+            };
 
-      case SET_ACTIVE_REPO:
+        case SET_ACTIVE_REPO:
 
-        const activeRepoData = action.payload;
-
-        return {
-          ...state,
-          activeRepoData,
-          issues: null,
-        }
+            return {
+                ...state,
+                activeRepoData: action.payload,
+                issues: null,
+            };
 
         case GET_USER_REPO_ISSUES_SUCCESS:
 
-          const issues = action.payload;
+            return {
+                ...state,
+                issues: action.payload,
+            };
 
-          return {
-            ...state,
-            issues,
-          }
-
-      default:
-        return state;
+        default:
+            return state;
     }
-  };
-  
-  export default user;
-  
+};
+
+export default user;

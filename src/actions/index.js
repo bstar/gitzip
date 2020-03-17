@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import { universalActionCreator } from '../utils';
+import universalActionCreator from '../utils';
 
 
 export const setGithubKey = (key, meta) => (universalActionCreator(types.SET_GITHUB_KEY, key, meta));

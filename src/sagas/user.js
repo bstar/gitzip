@@ -14,7 +14,7 @@ function* getUserDataSaga (action) {
     const { data } = yield call(fetchUserDetails, { key: action.payload }, action.payload.query);
 
     yield put(getUserSuccess(data));
-};
+}
 
 function* getUserReposSaga (action) {
 
@@ -22,7 +22,7 @@ function* getUserReposSaga (action) {
     const { data } = yield call(fetchUserRepos, { key: user.key }, action.payload.query);
 
     yield put(getUserReposSuccess(data));
-};
+}
 
 function* getUserRepoIssuesSaga (action) {
 
@@ -30,7 +30,7 @@ function* getUserRepoIssuesSaga (action) {
     const { data } = yield call(fetchUserRepoIssues, { repoName: action.payload.name, key: user.key }, action.payload.query);
 
     yield put(getUserRepoIssuesSuccess(data));
-};
+}
 
 
 export default function* allUserSagas () {
@@ -39,4 +39,4 @@ export default function* allUserSagas () {
         takeLatest(types.GET_USER_SUCCESS, getUserReposSaga),
         takeLatest(types.SET_ACTIVE_REPO, getUserRepoIssuesSaga),
     ]);
-};
+}

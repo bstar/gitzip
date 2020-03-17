@@ -21,6 +21,4 @@ const universalActionCreator = (type, payload, meta = {}, isError = false) => {
     return action;
 };
 
-export {
-    universalActionCreator,
-};
+export default universalActionCreator;
