@@ -22,12 +22,18 @@
     "redux-saga": "^1.1.3"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.13.0"
+    "react-test-renderer": "^16.13.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "server": "node src/server.js",
     "build": "react-scripts build",
+    "lint": "./node_modules/.bin/eslint --cache -c .eslintrc.js . --ext .js,.jsx --ignore-pattern server --ignore-pattern bin && echo 'client is lint free!'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

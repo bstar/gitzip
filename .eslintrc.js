@@ -1,0 +1,78 @@
+'use strict';
+
+module.exports = {
+    "extends": ["airbnb", "eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
+    "env": {
+        "es6": true,
+        "commonjs": true,
+        "browser": true,
+        "node": true,
+        "mocha": true,
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals": {
+        "chai": true,
+        "expect": true,
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+    ],
+    // 0 off, 1 warn, 2 error
+    "rules": {
+        "operator-linebreak": "off",
+        "arrow-body-style": ["error", "as-needed"],
+        "arrow-parens": [2, "as-needed"],
+        "indent": ["error", 4, { "ignoredNodes": ["JSXElement *"], "SwitchCase": 1}],
+        "max-len": ["error", 2000, 4],
+        "padded-blocks": ["off"],
+        "quotes": ["error", "single"],
+        "space-before-function-paren": ["error", "always"],
+        "no-console": ["error"],
+        "object-curly-newline": "off",
+        "react/forbid-prop-types": "off",
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "import/no-named-as-default": "off",
+        "no-underscore-dangle": "off",
+        "react/no-unescaped-entities": "off",
+        "react/jsx-key": 1,
+        "react/jsx-indent": [2, 4],
+        "react/require-default-props": "off",
+        "react/jsx-closing-bracket-location": [2, "after-props"],
+        "react/default-props-match-prop-types": 1,
+        "react/no-unused-prop-types": 1,
+        "react/display-name": "off",
+        "react/no-array-index-key": 1,
+        "react/jsx-no-bind": 1,
+        "jsx-a11y/click-events-have-key-events": 1,
+        "jsx-a11y/no-static-element-interactions": 1,
+        "jsx-a11y/no-noninteractive-element-interactions": 1,
+        "jsx-a11y/anchor-is-valid": [ "error", {
+            "components": [ "Link" ],
+            "specialLink": [ "to", "hrefLeft", "hrefRight" ],
+            "aspects": [ "noHref", "invalidHref", "preferButton" ],
+        }],
+        "jsx-a11y/label-has-associated-control": "off",
+        "jsx-a11y/label-has-for": "off",
+        "import/no-cycle": "off",
+        "react/no-deprecated": "off",
+        "react/destructuring-assignment": "off",
+        "import/named": "off",
+        "import/no-useless-path-segments": "off",
+        "react/default-props-match-prop-types": "off",
+        "react/no-unused-prop-types": "off",
+        "react/jsx-wrap-multilines": "off",
+        "react/jsx-wrap-multilines": "off",
+        "react/jsx-tag-spacing": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/button-has-type": "off",
+        "react/jsx-no-target-blank": "off",
+    },
+};

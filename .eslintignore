@@ -1,0 +1,16 @@
+
+# Files
+.eslintrc.js
+karma.config.js
+webpack.*config.js
+
+
+# Directories
+# no need for node_modules:
+# http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
+# > ESLint always ignores files in /node_modules/* and /bower_components/*.
+
+build/*
+node_modules/*
+lib/*
+serviceWorker.js
