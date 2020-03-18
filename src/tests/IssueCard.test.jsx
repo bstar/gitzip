@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import moment from 'moment';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../reducers';
@@ -9,6 +10,7 @@ const issueFixture = {
     title: 'test issue',
     created_at: '2020-03-17T12:41:57Z',
     updated_at: '2020-03-17T12:41:57Z',
+    fromDate: moment('2020-05-17T12:41:57Z'),
 };
 
 const store = createStore(
