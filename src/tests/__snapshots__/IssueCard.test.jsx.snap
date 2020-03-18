@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
       Title:
     </b>
      
+    test issue
   </div>
   <div>
     <b>
@@ -22,7 +23,7 @@ exports[`renders correctly 1`] = `
       Updated at:
     </b>
      
-    a few seconds ago
+    13 hours ago
   </div>
 </button>
 `;
